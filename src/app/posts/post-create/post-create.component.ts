@@ -27,5 +27,6 @@ export class PostCreateComponent implements OnInit {
     this.postService.addPost(post)
     // emits an event that a post was created
     // this.postCreated.emit(post);
+    postForm.resetForm();
   }
 }
