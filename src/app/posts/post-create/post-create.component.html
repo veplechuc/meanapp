@@ -1,9 +1,18 @@
 <mat-card>
+    <!-- changing to a form -->
+    <form (submit) = "onAddPost(postForm)" #postForm="ngForm">
+            <mat-form-field>
+                    <input matInput placeholder="Enter a post title" value="" ngModel name="input_title" required #title = ngModel>
+                    <mat-error *ngIf="title.invalid">"Enter some text"</mat-error>
+                <!-- use  [(ngModel)] = input_value for two ways binding -->
+                <!-- using a form we need a name and the ngmodel definition -->
+            </mat-form-field>
     <mat-form-field>
-        <textarea matInput rows="6" [(ngModel)] ="input_value"></textarea>
+        <textarea matInput rows="4" name ="input_content" placeholder="Enter content for the post" ngModel required #content = ngModel></textarea>
+        <mat-error *ngIf="content.invalid">"Enter some text"</mat-error>
         <!-- use  [(ngModel)] = input_value for two ways binding -->
     </mat-form-field>
-    <button mat-raised-button  color="primary" type="button"   (click)="onAddPost()">Save</button>
-        
+    <button mat-raised-button  color="primary" type="submit">Save</button>
+    </form>
 </mat-card>
 
