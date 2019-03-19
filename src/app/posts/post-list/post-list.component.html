@@ -1,14 +1,9 @@
-<mat-accordion>
-  <mat-expansion-panel>
+<mat-accordion  multi= "true" *ngIf="componentPosts.length >= 0">
+  <mat-expansion-panel *ngFor="let post of componentPosts">
     <mat-expansion-panel-header>
-      Primer expasion panel - Titulo
+      {{post.title}}
     </mat-expansion-panel-header>
-    contenido del primer titulo
-  </mat-expansion-panel>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      Segundo expasion panel - Titulo
-    </mat-expansion-panel-header>
-    contenido del segundo expansion panel
+    {{post.content}}
   </mat-expansion-panel>
 </mat-accordion>
+<p *ngIf="componentPosts.length <= 0"> No post entered!</p>
