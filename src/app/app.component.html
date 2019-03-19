@@ -2,7 +2,21 @@
 <app-header></app-header>
 <!-- added this commponent -->
 <main>
+    <!-- using service class dont need binding anymore -->
     <app-post-create></app-post-create>
+
+    <!-- this is when we used binding -->
+    <!-- <app-post-create (postCreated)="onPostCreated($event)"></app-post-create> -->
+    <!-- $event = allows to access any event emitted, in this case the post -->
+    <!-- postCreated =  output from app-post-created defined as @Output-->
+    <!-- onPostCreated =  method defined on app component (app-root)that receives the event emited from post.created -->
+    
+    <!-- using service class dont need binding anymore -->
     <app-post-list></app-post-list>
+
+    <!-- this is when we used binding -->
+    <!-- <app-post-list [posts] = "storedPosts"></app-post-list> -->
+    <!-- posts = varable that contains the list of post. It is defined on post-list component as @Input -->
+    <!-- storedPosts = variable defined on app component (app-root) to store the posts  -->
 </main>
 
