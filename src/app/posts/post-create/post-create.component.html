@@ -1,11 +1,9 @@
-
-<textarea rows="6" [(ngModel)] ="input_value"></textarea>
-
-<!-- use  [(ngModel)] = input_value for two ways binding -->
-
-
-<button type="button"  (click)="onAddPost()">Save</button>
-
-<p>{{ postText }}</p>
-
+<mat-card>
+    <mat-form-field>
+        <textarea matInput rows="6" [(ngModel)] ="input_value"></textarea>
+        <!-- use  [(ngModel)] = input_value for two ways binding -->
+    </mat-form-field>
+    <button mat-raised-button  color="primary" type="button"   (click)="onAddPost()">Save</button>
+        
+</mat-card>
 
